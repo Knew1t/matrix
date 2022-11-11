@@ -1,8 +1,10 @@
+#include "../core/helpers.h"
 #include "../s21_matrix.h"
 
 int s21_eq_matrix(matrix_t *A, matrix_t *B) {
   int result = 1;
-  if (A->rows == B->rows && A->columns == B->columns) {
+  if (is_matrix_correct(*A) && is_matrix_correct(*B) && A->rows == B->rows &&
+      A->columns == B->columns) {
     double *ptr_a = (double *)((A->matrix) + A->rows);
     double *ptr_b = (double *)((B->matrix) + B->rows);
     int i = 0;

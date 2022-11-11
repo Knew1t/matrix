@@ -19,7 +19,7 @@ int is_matrix_correct(matrix_t m) {
 }
 
 /* calculates minor */
-double calc_minor(int i, int j, matrix_t* A) {
+double calc_minor(int i, int j, matrix_t *A) {
   double result = 0;
   matrix_t lesser_matrix = {0};
   s21_create_matrix(A->rows - 1, A->columns - 1, &lesser_matrix);
@@ -35,9 +35,9 @@ double calc_minor(int i, int j, matrix_t* A) {
 }
 
 /* creates new matrix without selected lines */
-void fill_lesser_matrix(int i, int j, matrix_t* lesser_matrix,
-                        matrix_t* main_matrix) {
-  int r_2 = 0, c_2 = 0;  // less matrix coords;
+void fill_lesser_matrix(int i, int j, matrix_t *lesser_matrix,
+                        matrix_t *main_matrix) {
+  int r_2 = 0, c_2 = 0; // less matrix coords;
   for (int r_1 = 0; r_1 < main_matrix->rows; r_1++) {
     for (int c_1 = 0; c_1 < main_matrix->columns; c_1++) {
       if (r_1 != i && c_1 != j) {
@@ -53,7 +53,7 @@ void fill_lesser_matrix(int i, int j, matrix_t* lesser_matrix,
 }
 
 /* fills matrix with numbers from 1 to matrix scale */
-void fill_matrix(matrix_t* m) {
+void fill_matrix(matrix_t *m) {
   int count = 1;
   for (int i = 0; i < m->rows; i++) {
     for (int j = 0; j < m->columns; j++) {
@@ -62,8 +62,8 @@ void fill_matrix(matrix_t* m) {
   }
 }
 
-void fill_with_array_values(const double* m, size_t array_size1, matrix_t* A) {
-  double* ptr = (double*)((A->matrix) + A->rows);
+void fill_with_array_values(const double *m, size_t array_size1, matrix_t *A) {
+  double *ptr = (double *)((A->matrix) + A->rows);
   for (size_t i = 0; i < array_size1; i++) {
     *(ptr + i) = m[i];
     /* printf("*(ptr+i) = %lf\n", *(ptr + i)); */
@@ -76,4 +76,9 @@ double get_rand(double min, double max) {
   double div = max / range;
   number = min + (rand() / div);
   return number;
+}
+
+void initiate_matrix(matrix_t *m) {
+  matrix_t initiate = {NULL, 0, 0};
+  *m = initiate;
 }

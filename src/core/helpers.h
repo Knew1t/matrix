@@ -4,6 +4,7 @@
 
 #include "../s21_matrix.h"
 
+void initiate_matrix(matrix_t *m);
 void print_matrix(matrix_t m);
 int is_matrix_correct(matrix_t m);
 double calc_minor(int i, int j, matrix_t *A);
