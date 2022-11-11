@@ -37,6 +37,7 @@ START_TEST	src/tests/suites/determinant_suite.c	/^START_TEST(det5_single) {$/;"	
 START_TEST	src/tests/suites/eq_matrix_suite.c	/^START_TEST(eq_matrix_1) {$/;"	f
 START_TEST	src/tests/suites/eq_matrix_suite.c	/^START_TEST(eq_matrix_2) {$/;"	f
 START_TEST	src/tests/suites/eq_matrix_suite.c	/^START_TEST(eq_matrix_3) {$/;"	f
+START_TEST	src/tests/suites/eq_matrix_suite.c	/^START_TEST(eq_matrix_4) {$/;"	f
 START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(huge_test) {$/;"	f
 START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(inverse) {$/;"	f
 START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(inverse_matrix_error) {$/;"	f
