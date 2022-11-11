@@ -70,13 +70,14 @@ START_TEST(eq_matrix_4) {
   matrix_t A = {0};
   matrix_t B = {0};
   s21_create_matrix(rows, cols, &B);
+  s21_create_matrix(rows, cols, &A);
   A.matrix[0][0] = 1;
   A.matrix[0][1] = 1;
   A.matrix[1][0] = 1;
   A.matrix[1][1] = 1;
 
-  B.matrix[0][0] = 1;
-  B.matrix[0][1] = 1;
+  /* B.matrix[0][0] = 1; */
+  /* B.matrix[0][1] = 1; */
 
   ck_assert_int_eq(s21_eq_matrix(&A, &B), 0);
   s21_remove_matrix(&B);
