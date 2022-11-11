@@ -63,12 +63,33 @@ START_TEST(eq_matrix_3) {
 }
 END_TEST
 
+START_TEST(eq_matrix_4) {
+  // error
+  const int rows = 2;
+  const int cols = 2;
+  matrix_t A = {0};
+  matrix_t B = {0};
+  s21_create_matrix(rows, cols, &B);
+  A.matrix[0][0] = 1;
+  A.matrix[0][1] = 1;
+  A.matrix[1][0] = 1;
+  A.matrix[1][1] = 1;
+
+  B.matrix[0][0] = 1;
+  B.matrix[0][1] = 1;
+
+  ck_assert_int_eq(s21_eq_matrix(&A, &B), 0);
+  s21_remove_matrix(&B);
+}
+END_TEST
+
 Suite *eq_matrix_suite(void) {
   Suite *s = suite_create("eq_matrix_suite");
   TCase *tc = tcase_create("core");
   tcase_add_test(tc, eq_matrix_1);
   tcase_add_test(tc, eq_matrix_2);
   tcase_add_test(tc, eq_matrix_3);
+  tcase_add_test(tc, eq_matrix_4);
 
   suite_add_tcase(s, tc);
   return s;
