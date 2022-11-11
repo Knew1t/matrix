@@ -1,0 +1,109 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ARRAY_SIZE	src/tests/test_main.h	/^#define ARRAY_SIZE(/;"	d
+CALCULATION_ERROR	src/s21_matrix.h	/^enum error { OK, INCORRECT_MATRIX_ERROR, CALCULATION_ERROR };$/;"	e	enum:error
+CC	src/Makefile	/^CC = gcc  $/;"	m
+CFLAGS	src/Makefile	/^CFLAGS = -g -MD  -Wall -Werror -Wextra -std=c11 -pedantic #-fsanitize=address$/;"	m
+COVFLAGS	src/Makefile	/^COVFLAGS = -fprofile-arcs -ftest-coverage$/;"	m
+DEPS	src/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJ_FILES))$/;"	m
+DIRS	src/Makefile	/^DIRS = core source  $/;"	m
+HELPERS_H	src/core/helpers.h	/^#define HELPERS_H$/;"	d
+INCORRECT_MATRIX_ERROR	src/s21_matrix.h	/^enum error { OK, INCORRECT_MATRIX_ERROR, CALCULATION_ERROR };$/;"	e	enum:error
+KERN	src/Makefile	/^KERN = $(shell uname -s)$/;"	m
+LIB	src/Makefile	/^LIB = s21_matrix.a$/;"	m
+MATRIX_H	src/s21_matrix.h	/^#define MATRIX_H$/;"	d
+OBJDIR	src/Makefile	/^OBJDIR = obj$/;"	m
+OBJ_FILES	src/Makefile	/^OBJ_FILES = $(patsubst %.c, %.o, $(SRC_FILES))$/;"	m
+OK	src/s21_matrix.h	/^enum error { OK, INCORRECT_MATRIX_ERROR, CALCULATION_ERROR };$/;"	e	enum:error
+SRC_FILES	src/Makefile	/^SRC_FILES = $(foreach D, $(DIRS), $(wildcard $(D)\/*.c))$/;"	m
+START_TEST	src/tests/suites/calc_complements_suite.c	/^START_TEST(calc_complements_1) {$/;"	f
+START_TEST	src/tests/suites/calc_complements_suite.c	/^START_TEST(calc_complements_2_empty) {$/;"	f
+START_TEST	src/tests/suites/calc_complements_suite.c	/^START_TEST(calc_complements_3_wrong_size) {$/;"	f
+START_TEST	src/tests/suites/calc_complements_suite.c	/^START_TEST(calc_complements_4) {$/;"	f
+START_TEST	src/tests/suites/calc_complements_suite.c	/^START_TEST(calc_complements_5) {$/;"	f
+START_TEST	src/tests/suites/calc_complements_suite.c	/^START_TEST(calc_complements_6_negaitve_columns) {$/;"	f
+START_TEST	src/tests/suites/create_matrix_suite.c	/^START_TEST(create_matrix_1) {$/;"	f
+START_TEST	src/tests/suites/create_matrix_suite.c	/^START_TEST(create_matrix_2) {$/;"	f
+START_TEST	src/tests/suites/create_matrix_suite.c	/^START_TEST(create_matrix_3) {$/;"	f
+START_TEST	src/tests/suites/determinant_suite.c	/^START_TEST(det1) {$/;"	f
+START_TEST	src/tests/suites/determinant_suite.c	/^START_TEST(det2) {$/;"	f
+START_TEST	src/tests/suites/determinant_suite.c	/^START_TEST(det3) {$/;"	f
+START_TEST	src/tests/suites/determinant_suite.c	/^START_TEST(det4) {$/;"	f
+START_TEST	src/tests/suites/determinant_suite.c	/^START_TEST(det5_single) {$/;"	f
+START_TEST	src/tests/suites/eq_matrix_suite.c	/^START_TEST(eq_matrix_1) {$/;"	f
+START_TEST	src/tests/suites/eq_matrix_suite.c	/^START_TEST(eq_matrix_2) {$/;"	f
+START_TEST	src/tests/suites/eq_matrix_suite.c	/^START_TEST(eq_matrix_3) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(huge_test) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(inverse) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(inverse_matrix_error) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(s21_inverse_1) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(s21_inverse_2) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(test_incorrect) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(test_normal) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(test_not_sqare) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(test_one_by_one) {$/;"	f
+START_TEST	src/tests/suites/inverse_matrix_suite.c	/^START_TEST(test_zero_det) {$/;"	f
+START_TEST	src/tests/suites/mult_matrix_suite.c	/^START_TEST(mult_matrix_1) {$/;"	f
+START_TEST	src/tests/suites/mult_matrix_suite.c	/^START_TEST(mult_matrix_2) {$/;"	f
+START_TEST	src/tests/suites/mult_matrix_suite.c	/^START_TEST(mult_matrix_3_error) {$/;"	f
+START_TEST	src/tests/suites/mult_matrix_suite.c	/^START_TEST(mult_matrix_4_incorrect_input) {$/;"	f
+START_TEST	src/tests/suites/mult_matrix_suite.c	/^START_TEST(mult_matrix_5_null_ptr) {$/;"	f
+START_TEST	src/tests/suites/mult_number_suite.c	/^START_TEST(mult_number_1) {$/;"	f
+START_TEST	src/tests/suites/mult_number_suite.c	/^START_TEST(mult_number_2_inf) {$/;"	f
+START_TEST	src/tests/suites/mult_number_suite.c	/^START_TEST(mult_number_3_nan) {$/;"	f
+START_TEST	src/tests/suites/remove_matrix_suite.c	/^START_TEST(remove_matrix_1) {$/;"	f
+START_TEST	src/tests/suites/sub_matrix_suite.c	/^START_TEST(sub_matrix_1) {$/;"	f
+START_TEST	src/tests/suites/sub_matrix_suite.c	/^START_TEST(sub_matrix_2_error) {$/;"	f
+START_TEST	src/tests/suites/sub_matrix_suite.c	/^START_TEST(sub_matrix_3_wrong_size) {$/;"	f
+START_TEST	src/tests/suites/sub_matrix_suite.c	/^START_TEST(sub_matrix_4_null_ptr) {$/;"	f
+START_TEST	src/tests/suites/sum_matrix_suite.c	/^START_TEST(sum_matrix_1) {$/;"	f
+START_TEST	src/tests/suites/sum_matrix_suite.c	/^START_TEST(sum_matrix_2_error) {$/;"	f
+START_TEST	src/tests/suites/sum_matrix_suite.c	/^START_TEST(sum_matrix_3_wrong_size) {$/;"	f
+START_TEST	src/tests/suites/sum_matrix_suite.c	/^START_TEST(sum_matrix_4_null_pointer) {$/;"	f
+START_TEST	src/tests/suites/transpose_suite.c	/^START_TEST(transpose_matrix_1) {$/;"	f
+START_TEST	src/tests/suites/transpose_suite.c	/^START_TEST(transpose_matrix_2) {$/;"	f
+START_TEST	src/tests/suites/transpose_suite.c	/^START_TEST(transpose_matrix_3) {$/;"	f
+TEST_DIRS	src/Makefile	/^TEST_DIRS = tests tests\/suites$/;"	m
+TEST_FLAGS	src/Makefile	/^TEST_FLAGS = $(shell pkg-config --libs --cflags check) $/;"	m
+TEST_OBJ_FILES	src/Makefile	/^TEST_OBJ_FILES = $(patsubst %.c, %.o, $(TEST_SRC_FILES))$/;"	m
+TEST_SRC_FILES	src/Makefile	/^TEST_SRC_FILES = $(foreach D, $(TEST_DIRS), $(wildcard $(D)\/*.c))$/;"	m
+_TEST_MAIN_H	src/tests/test_main.h	/^#define _TEST_MAIN_H$/;"	d
+calc_complements_suite	src/tests/suites/calc_complements_suite.c	/^Suite *calc_complements_suite(void) {$/;"	f
+calc_minor	src/core/helpers.c	/^double calc_minor(int i, int j, matrix_t* A) {$/;"	f
+columns	src/s21_matrix.h	/^  int columns;$/;"	m	struct:matrix_struct
+create_matrix_suite	src/tests/suites/create_matrix_suite.c	/^Suite *create_matrix_suite(void) {$/;"	f
+determinant_suite	src/tests/suites/determinant_suite.c	/^Suite *determinant_suite(void) {$/;"	f
+eq_matrix_suite	src/tests/suites/eq_matrix_suite.c	/^Suite *eq_matrix_suite(void) {$/;"	f
+error	src/s21_matrix.h	/^enum error { OK, INCORRECT_MATRIX_ERROR, CALCULATION_ERROR };$/;"	g
+fill_lesser_matrix	src/core/helpers.c	/^void fill_lesser_matrix(int i, int j, matrix_t* lesser_matrix,$/;"	f
+fill_matrix	src/core/helpers.c	/^void fill_matrix(matrix_t* m) {$/;"	f
+fill_with_array_values	src/core/helpers.c	/^void fill_with_array_values(const double* m, size_t array_size1, matrix_t* A) {$/;"	f
+get_rand	src/core/helpers.c	/^double get_rand(double min, double max) {$/;"	f
+inverse_matrix_suite	src/tests/suites/inverse_matrix_suite.c	/^Suite *inverse_matrix_suite(void) {$/;"	f
+is_matrix_correct	src/core/helpers.c	/^int is_matrix_correct(matrix_t m) {$/;"	f
+main	src/tests/test_main.c	/^int main(void) {$/;"	f
+matrix	src/s21_matrix.h	/^  double **matrix;$/;"	m	struct:matrix_struct
+matrix_struct	src/s21_matrix.h	/^typedef struct matrix_struct {$/;"	s
+matrix_t	src/s21_matrix.h	/^} matrix_t;$/;"	t	typeref:struct:matrix_struct
+mult_matrix_suite	src/tests/suites/mult_matrix_suite.c	/^Suite *mult_matrix_suite(void) {$/;"	f
+mult_number_suite	src/tests/suites/mult_number_suite.c	/^Suite *mult_number_suite(void) {$/;"	f
+remove_matrix_suite	src/tests/suites/remove_matrix_suite.c	/^Suite *remove_matrix_suite(void) {$/;"	f
+rows	src/s21_matrix.h	/^  int rows;$/;"	m	struct:matrix_struct
+s21_calc_complements	src/source/calc_complements.c	/^int s21_calc_complements(matrix_t *A, matrix_t *result) {$/;"	f
+s21_create_matrix	src/source/create_matrix.c	/^int s21_create_matrix(int rows, int columns, matrix_t *result) {$/;"	f
+s21_determinant	src/source/determinant.c	/^int s21_determinant(matrix_t *A, double *result) {$/;"	f
+s21_eq_matrix	src/source/eq_matrix.c	/^int s21_eq_matrix(matrix_t *A, matrix_t *B) {$/;"	f
+s21_inverse_matrix	src/source/inverse_matrix.c	/^int s21_inverse_matrix(matrix_t *A, matrix_t *result) {$/;"	f
+s21_mult_matrix	src/source/mult_matrix.c	/^int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {$/;"	f
+s21_mult_number	src/source/mult_number.c	/^int s21_mult_number(matrix_t *A, double number, matrix_t *result) {$/;"	f
+s21_remove_matrix	src/source/remove_matrix.c	/^void s21_remove_matrix(matrix_t *A) {$/;"	f
+s21_sub_matrix	src/source/sub_matrix.c	/^int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {$/;"	f
+s21_sum_matrix	src/source/sum_matrix.c	/^int s21_sum_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {$/;"	f
+s21_transpose	src/source/transpose.c	/^int s21_transpose(matrix_t *A, matrix_t *result) {$/;"	f
+sub_matrix_suite	src/tests/suites/sub_matrix_suite.c	/^Suite *sub_matrix_suite(void) {$/;"	f
+sum_matrix_suite	src/tests/suites/sum_matrix_suite.c	/^Suite *sum_matrix_suite(void) {$/;"	f
+transpose_matrix_suite	src/tests/suites/transpose_suite.c	/^Suite *transpose_matrix_suite(void) {$/;"	f
