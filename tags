@@ -74,16 +74,17 @@ TEST_OBJ_FILES	src/Makefile	/^TEST_OBJ_FILES = $(patsubst %.c, %.o, $(TEST_SRC_F
 TEST_SRC_FILES	src/Makefile	/^TEST_SRC_FILES = $(foreach D, $(TEST_DIRS), $(wildcard $(D)\/*.c))$/;"	m
 _TEST_MAIN_H	src/tests/test_main.h	/^#define _TEST_MAIN_H$/;"	d
 calc_complements_suite	src/tests/suites/calc_complements_suite.c	/^Suite *calc_complements_suite(void) {$/;"	f
-calc_minor	src/core/helpers.c	/^double calc_minor(int i, int j, matrix_t* A) {$/;"	f
+calc_minor	src/core/helpers.c	/^double calc_minor(int i, int j, matrix_t *A) {$/;"	f
 columns	src/s21_matrix.h	/^  int columns;$/;"	m	struct:matrix_struct
 create_matrix_suite	src/tests/suites/create_matrix_suite.c	/^Suite *create_matrix_suite(void) {$/;"	f
 determinant_suite	src/tests/suites/determinant_suite.c	/^Suite *determinant_suite(void) {$/;"	f
 eq_matrix_suite	src/tests/suites/eq_matrix_suite.c	/^Suite *eq_matrix_suite(void) {$/;"	f
 error	src/s21_matrix.h	/^enum error { OK, INCORRECT_MATRIX_ERROR, CALCULATION_ERROR };$/;"	g
-fill_lesser_matrix	src/core/helpers.c	/^void fill_lesser_matrix(int i, int j, matrix_t* lesser_matrix,$/;"	f
-fill_matrix	src/core/helpers.c	/^void fill_matrix(matrix_t* m) {$/;"	f
-fill_with_array_values	src/core/helpers.c	/^void fill_with_array_values(const double* m, size_t array_size1, matrix_t* A) {$/;"	f
+fill_lesser_matrix	src/core/helpers.c	/^void fill_lesser_matrix(int i, int j, matrix_t *lesser_matrix,$/;"	f
+fill_matrix	src/core/helpers.c	/^void fill_matrix(matrix_t *m) {$/;"	f
+fill_with_array_values	src/core/helpers.c	/^void fill_with_array_values(const double *m, size_t array_size1, matrix_t *A) {$/;"	f
 get_rand	src/core/helpers.c	/^double get_rand(double min, double max) {$/;"	f
+initiate_matrix	src/core/helpers.c	/^void initiate_matrix(matrix_t *m) {$/;"	f
 inverse_matrix_suite	src/tests/suites/inverse_matrix_suite.c	/^Suite *inverse_matrix_suite(void) {$/;"	f
 is_matrix_correct	src/core/helpers.c	/^int is_matrix_correct(matrix_t m) {$/;"	f
 main	src/tests/test_main.c	/^int main(void) {$/;"	f
