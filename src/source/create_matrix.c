@@ -15,6 +15,7 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
       for (int i = 0; i < rows; i++) {
         m[i] = ptr + columns * i;
       }
+      memset(m + rows, 0, matrix_size * (sizeof(double)));
       result->matrix = m;
     } else {
       error = INCORRECT_MATRIX_ERROR;

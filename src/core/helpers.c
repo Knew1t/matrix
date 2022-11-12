@@ -4,15 +4,15 @@
 #include <time.h>
 
 // matrix output
-/* void print_matrix(matrix_t m) { */
-/*   for (int j = 0; j < m.rows; j++) { */
-/*     for (int i = 0; i < m.columns; i++) { */
-/*       printf("%12lf ", m.matrix[j][i]); */
-/*     } */
-/*     printf("\n"); */
-/*   } */
-/*   printf("\n"); */
-/* } */
+void print_matrix(matrix_t m) {
+  for (int j = 0; j < m.rows; j++) {
+    for (int i = 0; i < m.columns; i++) {
+      printf("%12lf ", m.matrix[j][i]);
+    }
+    printf("\n");
+  }
+  printf("\n");
+}
 
 int is_matrix_correct(matrix_t m) {
   return ((m.rows > 0 && m.columns > 0) && m.matrix != NULL) ? 1 : 0;
