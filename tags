@@ -7,7 +7,7 @@
 ARRAY_SIZE	src/tests/test_main.h	/^#define ARRAY_SIZE(/;"	d
 CALCULATION_ERROR	src/s21_matrix.h	/^enum error { OK, INCORRECT_MATRIX_ERROR, CALCULATION_ERROR };$/;"	e	enum:error
 CC	src/Makefile	/^CC = gcc  $/;"	m
-CFLAGS	src/Makefile	/^CFLAGS = -g -MD  -Wall -Werror -Wextra -std=c11 -pedantic #-fsanitize=address$/;"	m
+CFLAGS	src/Makefile	/^CFLAGS = -g -MD  -Wall -Werror -Wextra -std=c11 -pedantic -fsanitize=address$/;"	m
 COVFLAGS	src/Makefile	/^COVFLAGS = -fprofile-arcs -ftest-coverage$/;"	m
 DEPS	src/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJ_FILES))$/;"	m
 DIRS	src/Makefile	/^DIRS = core source  $/;"	m
@@ -87,12 +87,14 @@ get_rand	src/core/helpers.c	/^double get_rand(double min, double max) {$/;"	f
 initiate_matrix	src/core/helpers.c	/^void initiate_matrix(matrix_t *m) {$/;"	f
 inverse_matrix_suite	src/tests/suites/inverse_matrix_suite.c	/^Suite *inverse_matrix_suite(void) {$/;"	f
 is_matrix_correct	src/core/helpers.c	/^int is_matrix_correct(matrix_t m) {$/;"	f
+main	src/dev.c	/^int main(int argc, char *argv[]) {$/;"	f
 main	src/tests/test_main.c	/^int main(void) {$/;"	f
 matrix	src/s21_matrix.h	/^  double **matrix;$/;"	m	struct:matrix_struct
 matrix_struct	src/s21_matrix.h	/^typedef struct matrix_struct {$/;"	s
 matrix_t	src/s21_matrix.h	/^} matrix_t;$/;"	t	typeref:struct:matrix_struct
 mult_matrix_suite	src/tests/suites/mult_matrix_suite.c	/^Suite *mult_matrix_suite(void) {$/;"	f
 mult_number_suite	src/tests/suites/mult_number_suite.c	/^Suite *mult_number_suite(void) {$/;"	f
+print_matrix	src/core/helpers.c	/^void print_matrix(matrix_t m) {$/;"	f
 remove_matrix_suite	src/tests/suites/remove_matrix_suite.c	/^Suite *remove_matrix_suite(void) {$/;"	f
 rows	src/s21_matrix.h	/^  int rows;$/;"	m	struct:matrix_struct
 s21_calc_complements	src/source/calc_complements.c	/^int s21_calc_complements(matrix_t *A, matrix_t *result) {$/;"	f
