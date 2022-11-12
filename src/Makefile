@@ -1,5 +1,5 @@
 CC = gcc  
-CFLAGS = -g -MD  -Wall -Werror -Wextra -std=c11 -pedantic -fsanitize=address
+CFLAGS = -g -MD  -Wall -Werror -Wextra -std=c11 -pedantic #-fsanitize=address
 DIRS = core source  
 LIB = s21_matrix.a
 KERN = $(shell uname -s)
