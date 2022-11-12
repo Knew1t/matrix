@@ -70,3 +70,7 @@ run_tests_for_coverage
 *.gcda
 report
 *.info
+
+#readme files
+README.md
+README_RUS.md
