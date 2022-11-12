@@ -4,18 +4,18 @@
 int s21_transpose(matrix_t *A, matrix_t *result) {
   int result_value = OK;
   if (is_matrix_correct(*A) && result != NULL) {
-    matrix_t end_result;
+    matrix_t end_result = {0};
     s21_create_matrix(A->columns, A->rows, &end_result);
     double *ptr_result = (double *)(end_result.matrix + end_result.rows);
-    double *ptr_result_2 = (double *)(result->matrix + result->rows);
     for (int j = 0; j < A->columns; j++) {
       for (int k = 0; k < A->rows; k++) {
         *(ptr_result) = A->matrix[k][j];
         ptr_result++;
       }
     }
-    if (A->matrix == result->matrix) {
+    if (A == result) {
       ptr_result = (double *)(end_result.matrix + end_result.rows);
+      double *ptr_result_2 = (double *)(result->matrix + result->rows);
       for (int i = 0; i < A->columns * A->rows; i++) {
         *(ptr_result_2 + i) = *(ptr_result + i);
       }

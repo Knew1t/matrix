@@ -4,6 +4,7 @@
 int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
   int return_value = OK;
   matrix_t end_result = {0};
+  initiate_matrix(&end_result);
   if (result != NULL && is_matrix_correct(*A)) {
     s21_create_matrix(A->rows, A->columns, &end_result);
     double *ptr_a = (double *)((A->matrix) + A->rows);
@@ -13,12 +14,12 @@ int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
       int i = 0;
       while ((i < A->rows * A->columns)) {
         *(ptr_end_result + i) = *(ptr_a + i) * number;
-        if (A->matrix == result->matrix) {
+        if (A == result) {
           *(ptr_result + i) = *(ptr_end_result + i);
         }
         i++;
       }
-      if (A->matrix == result->matrix) {
+      if (A == result) {
         s21_remove_matrix(&end_result);
       } else {
         *result = end_result;

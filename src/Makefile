@@ -36,7 +36,7 @@ gcov_report:
 
 dev: dev.c $(LIB)
 	$(CC) $(CFLAGS)  dev.c $(LIB)
-	# ./a.out
+	./a.out
 
 $(LIB): $(OBJ_FILES)
 	ar -rc $(LIB) $(OBJ_FILES)
@@ -59,5 +59,7 @@ clean:
 	-rm ./tests/*.o # '-' to ignore mistake
 	-rm ./tests/*.d # '-' to ignore mistake
 	-rm -rf report* *.gcno *.gcda 
+
+.SILENT: clean gcov_report test
 
 -include $(OBJ_FILES .o=.d)

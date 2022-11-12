@@ -81,6 +81,7 @@ START_TEST(eq_matrix_4) {
 
   ck_assert_int_eq(s21_eq_matrix(&A, &B), 0);
   s21_remove_matrix(&B);
+  s21_remove_matrix(&A);
 }
 END_TEST
 
