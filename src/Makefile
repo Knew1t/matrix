@@ -53,12 +53,12 @@ leaks: test
 	leaks -atExit -- ./run_tests
 
 clean: 
-	rm -rf *.dSYM *.out $(OBJ_FILES) $(DEPS) *.d *.o *.a run_tests *.txt *.gcno *.gcda 
-	-rm ./tests/suites/*.d
-	-rm ./tests/suites/*.o # '-' to ignore mistake
-	-rm ./tests/*.o # '-' to ignore mistake
-	-rm ./tests/*.d # '-' to ignore mistake
-	-rm -rf report* *.gcno *.gcda 
+	@rm -rf *.dSYM *.out $(OBJ_FILES) $(DEPS) *.d *.o *.a run_tests *.txt *.gcno *.gcda 
+	@rm ./tests/suites/*.d
+	@rm ./tests/suites/*.o # '-' to ignore mistake
+	@rm ./tests/*.o # '-' to ignore mistake
+	@rm ./tests/*.d # '-' to ignore mistake
+	@rm -rf report* *.gcno *.gcda 
 
 .SILENT: clean gcov_report test
 
