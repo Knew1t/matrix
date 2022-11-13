@@ -4,14 +4,17 @@
 int main(void) {
   matrix_t A = {0};
   matrix_t B = {0};
-  s21_create_matrix(1, 3, &A);
-  s21_create_matrix(1, 3, &B);
-  A.matrix[0][0] = 1;
-  printf("s21_eq_matrix(&A, &B) = %d\n", s21_eq_matrix(&A, &B));
-
+  s21_create_matrix(3, 3, &A);
+  s21_create_matrix(3, 3, &B);
+  /* printf("пустые матрицы\n"); */
   /* print_matrix(A); */
-  /* print_matrix(A); */
+  /* print_matrix(B); */
 
+  /* printf("заполняем 123\n"); */
+  /* print_matrix(A); */
+  /* print_matrix(B); */
+  int res = s21_eq_matrix(&A, &B);
+  printf("res = %d\n", res);
   s21_remove_matrix(&A);
   s21_remove_matrix(&B);
   return 0;

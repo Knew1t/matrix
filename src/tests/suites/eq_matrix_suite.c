@@ -88,7 +88,6 @@ START_TEST(eq_matrix_6_empty_matrix_loop_rows) {
     s21_remove_matrix(&B);
   }
 }
-
 END_TEST
 
 START_TEST(eq_matrix_7_empty_matrix_loop_columns) {
@@ -137,6 +136,56 @@ START_TEST(eq_matrix_9_filled_matrix_loop_columns) {
 }
 END_TEST
 
+START_TEST(eq_matrix_10_first_is_empty) {
+  matrix_t A;
+  matrix_t B;
+  int cols = 3;
+  int rows = 3;
+  s21_create_matrix(rows, cols, &A);
+  A.matrix[0][1] = 2;
+  A.matrix[0][2] = 3;
+  A.matrix[0][0] = 3;
+  A.matrix[0][1] = 4;
+  A.matrix[0][2] = 5;
+  A.matrix[0][0] = 6;
+  A.matrix[0][1] = 7;
+  A.matrix[0][2] = 8;
+  s21_create_matrix(rows, cols, &B);
+  fill_matrix(&B);
+  ck_assert_int_eq(s21_eq_matrix(&A, &B), 0);
+  s21_remove_matrix(&A);
+  s21_remove_matrix(&B);
+}
+END_TEST
+
+START_TEST(eq_matrix_11_empty_matrix_loop) {
+  matrix_t A;
+  matrix_t B;
+  int cols = _i;
+  int rows = _i;
+  s21_create_matrix(rows, cols, &A);
+  s21_create_matrix(rows, cols, &B);
+  ck_assert_int_eq(s21_eq_matrix(&A, &B), 1);
+  s21_remove_matrix(&A);
+  s21_remove_matrix(&B);
+}
+END_TEST
+
+START_TEST(eq_matrix_12_filled_matrix_loop) {
+  matrix_t A;
+  matrix_t B;
+  int cols = _i;
+  int rows = _i;
+  s21_create_matrix(rows, cols, &A);
+  fill_matrix(&A);
+  s21_create_matrix(rows, cols, &B);
+  fill_matrix(&B);
+  ck_assert_int_eq(s21_eq_matrix(&A, &B), 1);
+  s21_remove_matrix(&A);
+  s21_remove_matrix(&B);
+}
+END_TEST
+
 Suite *eq_matrix_suite(void) {
   Suite *s = suite_create("eq_matrix_suite");
   TCase *tc = tcase_create("core");
@@ -144,11 +193,13 @@ Suite *eq_matrix_suite(void) {
   tcase_add_test(tc, eq_matrix_2);
   tcase_add_test(tc, eq_matrix_4);
   tcase_add_test(tc, eq_matrix_5);
-  tcase_add_loop_test(tc, eq_matrix_6_empty_matrix_loop_rows, 1, 20);
-  tcase_add_loop_test(tc, eq_matrix_7_empty_matrix_loop_columns, 1, 20);
-  tcase_add_loop_test(tc, eq_matrix_8_filled_matrix_loop_rows, 1, 20);
-  tcase_add_loop_test(tc, eq_matrix_9_filled_matrix_loop_columns, 1, 20);
-
+  tcase_add_loop_test(tc, eq_matrix_6_empty_matrix_loop_rows, 1, 21);
+  tcase_add_loop_test(tc, eq_matrix_7_empty_matrix_loop_columns, 1, 21);
+  tcase_add_loop_test(tc, eq_matrix_8_filled_matrix_loop_rows, 1, 21);
+  tcase_add_loop_test(tc, eq_matrix_9_filled_matrix_loop_columns, 1, 21);
+  tcase_add_test(tc, eq_matrix_10_first_is_empty);
+  tcase_add_loop_test(tc, eq_matrix_11_empty_matrix_loop, 1, 21);
+  tcase_add_loop_test(tc, eq_matrix_12_filled_matrix_loop, 1, 21);
   suite_add_tcase(s, tc);
   return s;
 }
