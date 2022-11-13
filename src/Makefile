@@ -36,7 +36,7 @@ gcov_report:
 
 # create dev.c for specific operation
 dev: dev.c $(LIB)
-	$(CC) $(CFLAGS)  dev.c $(LIB)
+	$(CC) dev.c $(LIB) $(CFLAGS) 
 	./a.out
 
 $(LIB): $(OBJ_FILES)

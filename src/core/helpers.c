@@ -70,7 +70,6 @@ void fill_with_array_values(const double *m, size_t array_size1, matrix_t *A) {
   double *ptr = (double *)((A->matrix) + A->rows);
   for (size_t i = 0; i < array_size1; i++) {
     *(ptr + i) = m[i];
-    /* printf("*(ptr+i) = %lf\n", *(ptr + i)); */
   }
 }
 
@@ -83,6 +82,7 @@ double get_rand(double min, double max) {
 }
 
 void initiate_matrix(matrix_t *m) {
-  matrix_t initiate = {NULL, 0, 0};
-  *m = initiate;
+  m->matrix = NULL;
+  m->rows = 0;
+  m->columns = 0;
 }

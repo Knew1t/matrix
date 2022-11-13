@@ -60,22 +60,22 @@ START_TEST(calc_complements_5) {
   const int size = 3;
   double m_array[9] = {5.63, 4.789,  -6.781, 100.03, 10.23,
                        45.3, -78.21, -11.11, 0};
-  double result_array[9] = {503.283000, -3542.913000, -311.245000,
-                            75.336910,  -530.342010,  -311.998390,
-                            286.311330, -933.342430,  -421.448770};
+  double expected_array[9] = {503.283000, -3542.913000, -311.245000,
+                              75.336910,  -530.342010,  -311.998390,
+                              286.311330, -933.342430,  -421.448770};
   matrix_t m = {0};
   s21_create_matrix(size, size, &m);
   fill_with_array_values(m_array, 9, &m);
-  matrix_t result = {0};
-  s21_create_matrix(size, size, &result);
-  fill_with_array_values(result_array, 9, &result);
+  matrix_t expected = {0};
+  s21_create_matrix(size, size, &expected);
+  fill_with_array_values(expected_array, 9, &expected);
   matrix_t res = {0};
   s21_calc_complements(&m, &res);
 
-  ck_assert_int_eq(s21_eq_matrix(&result, &res), 1);
+  ck_assert_int_eq(s21_eq_matrix(&expected, &res), 1);
   s21_remove_matrix(&m);
   s21_remove_matrix(&res);
-  s21_remove_matrix(&result);
+  s21_remove_matrix(&expected);
 }
 END_TEST
 
