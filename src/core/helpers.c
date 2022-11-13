@@ -15,7 +15,7 @@ void print_matrix(matrix_t m) {
 }
 
 int is_matrix_correct(matrix_t m) {
-  return ((m.rows > 0 && m.columns > 0) && m.matrix != NULL) ? 1 : 0;
+  return m.rows > 0 && m.columns > 0 && m.matrix;
 }
 
 /* calculates minor */

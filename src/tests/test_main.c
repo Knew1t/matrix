@@ -1,12 +1,12 @@
 #include "test_main.h"
 
 int main(void) {
-  Suite *test_suites[] = {eq_matrix_suite()/*,        determinant_suite(),
+  Suite *test_suites[] = {eq_matrix_suite(),        determinant_suite(),
                           calc_complements_suite(), create_matrix_suite(),
                           transpose_matrix_suite(), sum_matrix_suite(),
                           calc_complements_suite(), mult_matrix_suite(),
                           mult_number_suite(),      sub_matrix_suite(),
-                          remove_matrix_suite(),    inverse_matrix_suite()*/};
+                          remove_matrix_suite(),    inverse_matrix_suite()};
 
   SRunner *sr = srunner_create(test_suites[0]);
   srunner_set_fork_status(sr, CK_NOFORK);
