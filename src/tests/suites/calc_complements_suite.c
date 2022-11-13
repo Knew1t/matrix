@@ -31,7 +31,7 @@ START_TEST(calc_complements_3_wrong_size) {
   matrix_t a = {0};
   matrix_t b = {0};
   s21_create_matrix(1, 2, &a);
-  ck_assert_int_eq(s21_calc_complements(&a, &b), INCORRECT_MATRIX_ERROR);
+  ck_assert_int_eq(s21_calc_complements(&a, &b), CALCULATION_ERROR);
   s21_remove_matrix(&a);
   s21_remove_matrix(&b);
 }

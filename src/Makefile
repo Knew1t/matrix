@@ -35,9 +35,9 @@ gcov_report:
 	open report/index.html
 
 # create dev.c for specific operation
-# dev: dev.c $(LIB)
-# 	$(CC) $(CFLAGS)  dev.c $(LIB)
-# 	./a.out
+dev: dev.c $(LIB)
+	$(CC) $(CFLAGS)  dev.c $(LIB)
+	./a.out
 
 $(LIB): $(OBJ_FILES)
 	ar -rc $(LIB) $(OBJ_FILES)

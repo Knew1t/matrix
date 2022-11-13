@@ -4,15 +4,15 @@
 #include <time.h>
 
 // matrix output
-/* void print_matrix(matrix_t m) { */
-/*   for (int j = 0; j < m.rows; j++) { */
-/*     for (int i = 0; i < m.columns; i++) { */
-/*       printf("%2g ", m.matrix[j][i]); */
-/*     } */
-/*     printf("\n"); */
-/*   } */
-/*   printf("\n"); */
-/* } */
+void print_matrix(matrix_t m) {
+  for (int j = 0; j < m.rows; j++) {
+    for (int i = 0; i < m.columns; i++) {
+      printf("%2g ", m.matrix[j][i]);
+    }
+    printf("\n");
+  }
+  printf("\n");
+}
 
 int is_matrix_correct(matrix_t m) {
   return ((m.rows > 0 && m.columns > 0) && m.matrix != NULL) ? 1 : 0;
@@ -21,23 +21,27 @@ int is_matrix_correct(matrix_t m) {
 /* calculates minor */
 double calc_minor(int i, int j, matrix_t *A) {
   double result = 0;
-  matrix_t lesser_matrix = {0};
-  s21_create_matrix(A->rows - 1, A->columns - 1, &lesser_matrix);
-  fill_lesser_matrix(i, j, &lesser_matrix, A);
-  if (lesser_matrix.rows == 2) {
-    result = lesser_matrix.matrix[0][0] * lesser_matrix.matrix[1][1] -
-             lesser_matrix.matrix[1][0] * lesser_matrix.matrix[0][1];
+  if (A->rows && A->columns > 1) {
+    matrix_t lesser_matrix = {0};
+    s21_create_matrix(A->rows - 1, A->columns - 1, &lesser_matrix);
+    fill_lesser_matrix(i, j, &lesser_matrix, A);
+    if (lesser_matrix.rows == 2) {
+      result = lesser_matrix.matrix[0][0] * lesser_matrix.matrix[1][1] -
+               lesser_matrix.matrix[1][0] * lesser_matrix.matrix[0][1];
+    } else {
+      s21_determinant(&lesser_matrix, &result);
+    }
+    s21_remove_matrix(&lesser_matrix);
   } else {
-    s21_determinant(&lesser_matrix, &result);
+    result = 1;
   }
-  s21_remove_matrix(&lesser_matrix);
   return result;
 }
 
 /* creates new matrix without selected lines */
 void fill_lesser_matrix(int i, int j, matrix_t *lesser_matrix,
                         matrix_t *main_matrix) {
-  int r_2 = 0, c_2 = 0;  // less matrix coords;
+  int r_2 = 0, c_2 = 0; // less matrix coords;
   for (int r_1 = 0; r_1 < main_matrix->rows; r_1++) {
     for (int c_1 = 0; c_1 < main_matrix->columns; c_1++) {
       if (r_1 != i && c_1 != j) {
