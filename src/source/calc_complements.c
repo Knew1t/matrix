@@ -3,7 +3,7 @@
 
 int s21_calc_complements(matrix_t *A, matrix_t *result) {
   int return_value = OK;
-  if (is_matrix_correct(*A)) {
+  if (is_matrix_correct(A)) {
     if (A->rows == A->columns && A->rows > 1) {
       s21_create_matrix(A->rows, A->columns, result);
       for (int i = 0; i < A->rows; ++i) {

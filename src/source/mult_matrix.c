@@ -2,7 +2,7 @@
 #include "../s21_matrix.h"
 int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
   int return_value = OK;
-  if (result != NULL && is_matrix_correct(*A) && is_matrix_correct(*B)) {
+  if (is_matrix_correct(A) && is_matrix_correct(B)) {
     if (A->columns == B->rows) {
       s21_create_matrix(A->rows, B->columns, result);
       double **C = result->matrix;

@@ -3,11 +3,11 @@
 
 int s21_transpose(matrix_t *A, matrix_t *result) {
   int result_value = OK;
-  if (is_matrix_correct(*A) && result != NULL) {
+  if (is_matrix_correct(A)) {
     s21_create_matrix(A->columns, A->rows, result);
-    for (int j = 0; j < A->columns; j++) {
-      for (int k = 0; k < A->rows; k++) {
-        result->matrix[j][k] = A->matrix[k][j];
+    for (int i = 0; i < A->rows; i++) {
+      for (int j = 0; j < A->columns; j++) {
+        result->matrix[j][i] = A->matrix[i][j];
       }
     }
   } else {

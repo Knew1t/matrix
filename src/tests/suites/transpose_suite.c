@@ -28,18 +28,6 @@ START_TEST(transpose_matrix_1) {
 }
 END_TEST
 
-START_TEST(transpose_matrix_2) {
-  // null pointer
-  matrix_t A = {0};
-  matrix_t *result = NULL;
-
-  s21_create_matrix(2, 2, &A);
-  ck_assert_int_eq(s21_transpose(&A, result), INCORRECT_MATRIX_ERROR);
-
-  s21_remove_matrix(&A);
-}
-END_TEST
-
 START_TEST(transpose_matrix_3) {
   // incorrect input
   matrix_t A = {0};
@@ -87,7 +75,6 @@ Suite *transpose_matrix_suite(void) {
   Suite *s = suite_create("transpose_matrix_suite");
   TCase *tc = tcase_create("core");
   tcase_add_test(tc, transpose_matrix_1);
-  tcase_add_test(tc, transpose_matrix_2);
   tcase_add_test(tc, transpose_matrix_3);
   tcase_add_test(tc, transpose_matrix_4_uninitialized_fully);
 

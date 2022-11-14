@@ -3,7 +3,7 @@
 
 int s21_create_matrix(int rows, int columns, matrix_t *result) {
   int return_value = OK;
-  initiate_matrix(result);
+  /* initiate_matrix(result); */
   if (rows > 0 && columns > 0) {
     result->rows = rows;
     result->columns = columns;

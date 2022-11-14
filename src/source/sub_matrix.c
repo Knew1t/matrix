@@ -4,7 +4,7 @@
 /*PATHETIC TWO MALLOCS*/
 int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
   int return_value = OK;
-  if (result != NULL && is_matrix_correct(*A) && is_matrix_correct(*B)) {
+  if (is_matrix_correct(A) && is_matrix_correct(B)) {
     if (A->rows == B->rows && A->columns == B->columns) {
       s21_create_matrix(A->rows, A->columns, result);
       for (int i = 0; i < A->rows; i++) {

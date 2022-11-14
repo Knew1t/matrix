@@ -3,7 +3,7 @@
 
 int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
   int return_value = OK;
-  if (result != NULL && is_matrix_correct(*A)) {
+  if (is_matrix_correct(A)) {
     s21_create_matrix(A->rows, A->columns, result);
     if (isfinite(number) && !isnan(number)) {
       for (int i = 0; i < A->rows; i++) {

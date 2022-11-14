@@ -5,7 +5,7 @@ int s21_inverse_matrix(matrix_t *A, matrix_t *result) {
   int return_value = OK;
   double determinant = 0;
   if (A->rows == A->columns) {
-    if (is_matrix_correct(*A) && result != NULL) {
+    if (is_matrix_correct(A) && result != NULL) {
       if (A->rows == 1 && A->columns == 1) {
         if (A->matrix[0][0] != 0) { // determinant = 0;
           s21_create_matrix(A->rows, A->columns, result);

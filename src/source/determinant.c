@@ -4,7 +4,7 @@
 int s21_determinant(matrix_t *A, double *result) {
   int return_value = OK;
   *result = 0;
-  if (is_matrix_correct(*A) && (A->rows == A->columns)) {
+  if (is_matrix_correct(A) && (A->rows == A->columns)) {
     if (A->columns != 1) {
       for (int j = 0; j < A->columns; j++) {
         *result += pow(-1, 2 + j) * A->matrix[0][j] * calc_minor(0, j, A);

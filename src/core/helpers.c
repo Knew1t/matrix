@@ -14,8 +14,8 @@ void print_matrix(matrix_t m) {
   printf("\n");
 }
 
-int is_matrix_correct(matrix_t m) {
-  return m.rows > 0 && m.columns > 0 /*&& m.matrix*/;
+int is_matrix_correct(matrix_t *m) {
+  return m && m->rows > 0 && m->columns > 0;
 }
 
 /* calculates minor */
