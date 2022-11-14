@@ -6,6 +6,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define SUCCESS 1
+#define FAILURE 0
+
 enum error { OK, INCORRECT_MATRIX_ERROR, CALCULATION_ERROR };
 
 typedef struct matrix_struct {
