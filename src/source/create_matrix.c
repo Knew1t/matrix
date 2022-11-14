@@ -12,8 +12,9 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
       for (int i = 0; i < rows; i++) {
         result->matrix[i] = calloc(columns, sizeof(double));
         if (result->matrix[i] == NULL) {
-          for (int j = 0; j < i; j++)
+          for (int j = 0; j < i; j++) {
             free(result->matrix[j]);
+          }
           free(result->matrix);
         }
       }

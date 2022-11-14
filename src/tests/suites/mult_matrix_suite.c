@@ -7,13 +7,16 @@ START_TEST(mult_matrix_1) {
   matrix_t mtx = {0};
   s21_create_matrix(cols, rows, &mtx);
 
-  for (int i = 0; i < rows; i++)
-    for (int j = 0; j < cols; j++)
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
       m.matrix[i][j] = get_rand(DBL_MIN, DBL_MAX);
-
-  for (int i = 0; i < cols; i++)
-    for (int j = 0; j < rows; j++)
+    }
+  }
+  for (int i = 0; i < cols; i++) {
+    for (int j = 0; j < rows; j++) {
       mtx.matrix[i][j] = get_rand(DBL_MIN, DBL_MAX);
+    }
+  }
 
   matrix_t check = {0};
   s21_create_matrix(m.rows, mtx.columns, &check);
@@ -46,12 +49,10 @@ START_TEST(mult_matrix_2) {
   s21_create_matrix(cols, rows, &mtx);
 
   for (int i = 0, c = 1; i < rows; i++)
-    for (int j = 0; j < cols; j++)
-      m.matrix[i][j] = c++;
+    for (int j = 0; j < cols; j++) m.matrix[i][j] = c++;
 
   for (int i = 0, c = 7; i < cols; i++)
-    for (int j = 0; j < rows; j++)
-      mtx.matrix[i][j] = c++;
+    for (int j = 0; j < rows; j++) mtx.matrix[i][j] = c++;
 
   matrix_t check = {0};
   s21_create_matrix(m.rows, mtx.columns, &check);
@@ -79,12 +80,10 @@ START_TEST(mult_matrix_3_error) {
   s21_create_matrix(cols - 1, rows, &mtx);
 
   for (int i = 0, c = 1; i < rows; i++)
-    for (int j = 0; j < cols; j++)
-      m.matrix[i][j] = c++;
+    for (int j = 0; j < cols; j++) m.matrix[i][j] = c++;
 
   for (int i = 0, c = 7; i < cols - 1; i++)
-    for (int j = 0; j < rows; j++)
-      mtx.matrix[i][j] = c++;
+    for (int j = 0; j < rows; j++) mtx.matrix[i][j] = c++;
 
   matrix_t res = {0};
   ck_assert_int_eq(s21_mult_matrix(&m, &mtx, &res), CALCULATION_ERROR);

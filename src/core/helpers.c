@@ -41,7 +41,7 @@ double calc_minor(int i, int j, matrix_t *A) {
 /* creates new matrix without selected lines */
 void fill_lesser_matrix(int i, int j, matrix_t *lesser_matrix,
                         matrix_t *main_matrix) {
-  int r_2 = 0, c_2 = 0; // less matrix coords;
+  int r_2 = 0, c_2 = 0;
   for (int r_1 = 0; r_1 < main_matrix->rows; r_1++) {
     for (int c_1 = 0; c_1 < main_matrix->columns; c_1++) {
       if (r_1 != i && c_1 != j) {

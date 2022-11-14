@@ -24,4 +24,4 @@ Suite *mult_number_suite(void);
 Suite *sub_matrix_suite(void);
 Suite *inverse_matrix_suite(void);
 
-#endif // _TEST_MAIN_H
+#endif  // _TEST_MAIN_H
