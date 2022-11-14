@@ -12,6 +12,8 @@ int s21_determinant(matrix_t *A, double *result) {
     } else {
       *result = A->matrix[0][0];
     }
+  } else if (A->rows != A->columns) {
+    return_value = CALCULATION_ERROR;
   } else {
     return_value = INCORRECT_MATRIX_ERROR;
   }

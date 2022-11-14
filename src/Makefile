@@ -25,7 +25,7 @@ endif
 all: test
 
 test: $(LIB) 
-	$(CC) $(CFLAGS) $(TEST_SRC_FILES) $(LIB) -o run_tests $(TEST_FLAGS)
+	$(CC) $(CFLAGS) $(TEST_SRC_FILES) $(LIB) -o run_tests $(TEST_FLAGS) -I. -Itests
 	./run_tests
 
 gcov_report: 
