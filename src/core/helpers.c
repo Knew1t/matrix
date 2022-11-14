@@ -15,7 +15,7 @@ void print_matrix(matrix_t m) {
 }
 
 int is_matrix_correct(matrix_t m) {
-  return m.rows > 0 && m.columns > 0 && m.matrix;
+  return m.rows > 0 && m.columns > 0 /*&& m.matrix*/;
 }
 
 /* calculates minor */
@@ -66,11 +66,16 @@ void fill_matrix(matrix_t *m) {
   }
 }
 
-void fill_with_array_values(const double *m, size_t array_size1, matrix_t *A) {
-  double *ptr = (double *)((A->matrix) + A->rows);
-  for (size_t i = 0; i < array_size1; i++) {
-    *(ptr + i) = m[i];
+void fill_with_array_values(const double *m, matrix_t *A) {
+  double *ptr = (double *)m;
+  for (int i = 0; i < A->rows; i++) {
+    for (int j = 0; j < A->columns; j++) {
+      A->matrix[i][j] = *(ptr++);
+    }
   }
+  /* for (size_t i = 0; i < array_size1; i++) { */
+  /*   *(ptr + i) = m[i]; */
+  /* } */
 }
 
 double get_rand(double min, double max) {

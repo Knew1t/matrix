@@ -8,8 +8,8 @@ START_TEST(calc_complements_1) {
   matrix_t m;
   double result_array[9] = {0, 10, -20, 4, -14, 8, -8, -2, 4};
   double m2[9] = {1, 2, 3, 0, 4, 2, 5, 2, 1};
-  fill_with_array_values(m2, 9, &a);
-  fill_with_array_values(result_array, 9, &res);
+  fill_with_array_values(m2, &a);
+  fill_with_array_values(result_array, &res);
   s21_calc_complements(&a, &m);
   ck_assert_int_eq(s21_eq_matrix(&res, &m), 1);
   s21_remove_matrix(&m);
@@ -45,8 +45,8 @@ START_TEST(calc_complements_4) {
   s21_create_matrix(size, size, &result);
   double m_array[9] = {1, 2, 3, 1, 4, 2, 5, 2, 1};
   double result_array[9] = {0, 9, -18, 4, -14, 8, -8, 1, 2};
-  fill_with_array_values(m_array, 9, &m);
-  fill_with_array_values(result_array, 9, &result);
+  fill_with_array_values(m_array, &m);
+  fill_with_array_values(result_array, &result);
   matrix_t res = {0};
   s21_calc_complements(&m, &res);
   ck_assert_int_eq(s21_eq_matrix(&result, &res), 1);
@@ -65,10 +65,10 @@ START_TEST(calc_complements_5) {
                               286.311330, -933.342430,  -421.448770};
   matrix_t m = {0};
   s21_create_matrix(size, size, &m);
-  fill_with_array_values(m_array, 9, &m);
+  fill_with_array_values(m_array, &m);
   matrix_t expected = {0};
   s21_create_matrix(size, size, &expected);
-  fill_with_array_values(expected_array, 9, &expected);
+  fill_with_array_values(expected_array, &expected);
   matrix_t res = {0};
   s21_calc_complements(&m, &res);
 

@@ -5,11 +5,9 @@ int s21_transpose(matrix_t *A, matrix_t *result) {
   int result_value = OK;
   if (is_matrix_correct(*A) && result != NULL) {
     s21_create_matrix(A->columns, A->rows, result);
-    double *ptr_result = (double *)(result->matrix + result->rows);
     for (int j = 0; j < A->columns; j++) {
       for (int k = 0; k < A->rows; k++) {
-        *(ptr_result) = A->matrix[k][j];
-        ptr_result++;
+        result->matrix[j][k] = A->matrix[k][j];
       }
     }
   } else {

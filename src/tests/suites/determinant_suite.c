@@ -7,7 +7,7 @@ START_TEST(det1) {
   double result = 0;
   double correct_result = 0;
   s21_create_matrix(4, 4, &m);
-  fill_with_array_values(m2, 16, &m);
+  fill_with_array_values(m2, &m);
   s21_determinant(&m, &result);
   s21_remove_matrix(&m);
   ck_assert_double_eq_tol(correct_result, result, 1e-6l);
@@ -21,7 +21,7 @@ START_TEST(det2) {
   double result = 0;
   double correct_result = 264;
   s21_create_matrix(5, 5, &m);
-  fill_with_array_values(m2, 25, &m);
+  fill_with_array_values(m2, &m);
   s21_determinant(&m, &result);
   s21_remove_matrix(&m);
   ck_assert_double_eq_tol(correct_result, result, 1e-6l);
@@ -34,7 +34,7 @@ START_TEST(det3) {
   double result = 0;
   double correct_result = -36;
   s21_create_matrix(4, 4, &m);
-  fill_with_array_values(m2, 16, &m);
+  fill_with_array_values(m2, &m);
   s21_determinant(&m, &result);
   s21_remove_matrix(&m);
   ck_assert_double_eq_tol(correct_result, result, 1e-6l);
