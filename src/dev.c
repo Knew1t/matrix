@@ -31,6 +31,7 @@ int main(void) {
   expected.matrix[2][0] = 27;
   expected.matrix[2][1] = -29;
   expected.matrix[2][2] = 24;
+  expected.matrix[2][2] = 24;
   print_matrix(expected);
   print_matrix(res);
   s21_remove_matrix(&expected);

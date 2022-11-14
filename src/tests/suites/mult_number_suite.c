@@ -34,6 +34,7 @@ START_TEST(mult_number_2_inf) {
   int a = s21_mult_number(&m, number, &res);
   ck_assert_int_eq(a, CALCULATION_ERROR);
   s21_remove_matrix(&m);
+  s21_remove_matrix(&res);
 }
 END_TEST
 
@@ -47,6 +48,7 @@ START_TEST(mult_number_3_nan) {
   int a = s21_mult_number(&m, number, &res);
   ck_assert_int_eq(a, CALCULATION_ERROR);
   s21_remove_matrix(&m);
+  s21_remove_matrix(&res);
 }
 END_TEST
 

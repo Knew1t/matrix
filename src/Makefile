@@ -1,8 +1,10 @@
-CC = gcc  
+CC = gcc 
 CFLAGS = -g -MD  -Wall -Werror -Wextra -std=c11 -pedantic -fsanitize=address
 DIRS = core source  
 LIB = s21_matrix.a
 KERN = $(shell uname -s)
+
+# -Icore/ 
 
 OBJDIR = obj
 SRC_FILES = $(foreach D, $(DIRS), $(wildcard $(D)/*.c))

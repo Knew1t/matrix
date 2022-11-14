@@ -16,7 +16,6 @@ int s21_inverse_matrix(matrix_t *A, matrix_t *result) {
       } else {
         s21_determinant(A, &determinant);
         if (determinant != 0) {
-          s21_create_matrix(A->rows, A->columns, result);
           matrix_t complemented;
           matrix_t transposed;
 
